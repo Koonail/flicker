@@ -34,6 +34,6 @@ public class UserController {
     public String test(Map<String,Object> map)
     {
         map.put("name","koonail");
-        return "userList";
+        return "index";
     }
 }
