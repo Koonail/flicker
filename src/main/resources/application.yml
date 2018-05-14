@@ -1,0 +1,41 @@
+server:
+  port: 9999
+
+
+spring:
+    datasource:
+        name: flicker
+        url: jdbc:mysql://127.0.0.1:3306/flicker?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+        username: root
+        password: 330739264
+    freemarker :
+        allow-request-override : false
+        cache : false
+        check-template-location : true
+        charset : UTF-8
+        content-type : text/html
+        expose-request-attributes : false
+        expose-session-attributes : false
+        expose-spring-macro-helpers : false
+        #设置面板后缀
+        suffix : .html
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.koonail.flicker.entity
+
+mapper:
+  mappers:  com.koonail.flicker.dao
+  not-empty: false
+  identity: MYSQL
+
+#pagehelper
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+    returnPageInfo: check
+
+
+
