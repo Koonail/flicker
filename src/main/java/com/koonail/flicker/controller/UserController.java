@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -22,18 +23,25 @@ public class UserController {
     private IUserService userService;
 
     @RequestMapping(value = "userList")
-    public String queryAll(Map<String,Object> map)
-    {
+    public String queryAll(Map<String,Object> map){
         List<UserPojo> userList = userService.queryAll();
         String name = "Koonail";
         map.put("name",name);
         return "userList";
     }
 
+    @RequestMapping(value = "login")
+    public String login(HttpServletRequest request,Map<String,Object> map){
+        String name = request.getParameter("logname");
+        String password = request.getParameter("logpass");
+        map.put("name", name);
+        map.put("password", password);
+        return "success";
+    }
+
     @RequestMapping(value = "index")
-    public String test(Map<String,Object> map)
-    {
-        map.put("name","koonail");
+    public String home(Map<String,Object> map){
+        map.put("name", "Koonail");
         return "index";
     }
 }

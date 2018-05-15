@@ -9,6 +9,7 @@ spring:
         username: root
         password: 330739264
     freemarker :
+        template_update_delay : 0
         allow-request-override : false
         cache : false
         check-template-location : true
@@ -18,7 +19,7 @@ spring:
         expose-session-attributes : false
         expose-spring-macro-helpers : false
         #设置面板后缀
-        suffix : .html
+        suffix : .ftl
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
