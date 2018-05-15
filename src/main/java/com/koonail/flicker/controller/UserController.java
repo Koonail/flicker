@@ -2,7 +2,6 @@ package com.koonail.flicker.controller;
 
 import com.koonail.flicker.entity.UserPojo;
 import com.koonail.flicker.service.IUserService;
-import com.koonail.flicker.service.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,7 +35,7 @@ public class UserController {
         String password = request.getParameter("logpass");
         map.put("name", name);
         map.put("password", password);
-        return "success";
+        return "login";
     }
 
     @RequestMapping(value = "index")
