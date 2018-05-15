@@ -35,7 +35,7 @@ public class UserController {
         String password = request.getParameter("logpass");
         map.put("name", name);
         map.put("password", password);
-        return "login";
+        return "index";
     }
 
     @RequestMapping(value = "index")
